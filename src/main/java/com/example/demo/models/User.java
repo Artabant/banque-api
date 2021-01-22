@@ -1,25 +1,27 @@
 package com.example.demo.models;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User {
 	
-	private int id;
 	private String nom;
 	private String prenom;
+	private List<Account> accounts = new ArrayList<>();
 	
 	public User() {
 		
 	}
-	public User(int id, String nom, String prenom) {
+	public User(String nom, String prenom) {
 		super();
-		this.id = id;
 		this.nom = nom;
 		this.prenom = prenom;
 	}
-	public int getId() {
-		return id;
-	}
-	public void setId(int id) {
-		this.id = id;
+	public User(String nom, String prenom, List<Account> accounts) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.accounts = accounts;
 	}
 	public String getNom() {
 		return nom;
@@ -33,8 +35,17 @@ public class User {
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
 	}
+	public List<Account> getAccounts() {
+		return accounts;
+	}
+	public void setAccounts(List<Account> accounts) {
+		this.accounts = accounts;
+	}
 	@Override
 	public String toString() {
-		return "User [id=" + id + ", nom=" + nom + ", prenom=" + prenom + "]";
+		return "User [nom=" + nom + ", prenom=" + prenom + ", accounts=" + accounts + "]";
 	}
+
+
+	
 }
